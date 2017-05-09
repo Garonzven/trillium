@@ -130,10 +130,5 @@ s
   }
 </script>
 
-<script>
-$(document).click(function(){
-    alert("has pulsado en botón");
-})
-</script>
 
 <?php get_footer(); ?>
