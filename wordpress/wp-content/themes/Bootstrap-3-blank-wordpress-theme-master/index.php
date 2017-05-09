@@ -33,11 +33,19 @@
 			<!--FIn de header-->
       <div class="container-full">
         <div class="button-menu">
-          <span class="glyphicon glyphicon-menu-hamburger" style="font-size:2em; color:white;"></span>
+          <span class="glyphicon glyphicon-menu-hamburger" style="font-size:2em; color:white;" onclick="displayMenu()"></span>
         </div>
-
         <div class="button-menu-apply text-decoration">
           <a href="#">APPLY NOW</a>
+        </div>
+
+        <div id="menu">
+          <div class="triangulo"></div>
+          <ul>
+            <li><a href="#">Menu1</a></li>
+            <li><a href="#">Menu1</a></li>
+            <li><a href="#">Menu1</a></li>
+          </ul>
         </div>
 <div class="row">
 
@@ -109,5 +117,23 @@ s
 
 
 
+<script type="text/javascript">
+  function displayMenu(){
+    var display;
+    var menu = document.getElementById("menu");
+    display = menu.style.display;
+    if(display == "block"){
+      menu.style.display = "none";
+    }else{
+      menu.style.display = "block";
+    }
+  }
+</script>
+
+<script>
+$(document).click(function(){
+    alert("has pulsado en botón");
+})
+</script>
 
 <?php get_footer(); ?>
