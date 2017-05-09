@@ -6,35 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <?php wp_head(); ?>
+    <link rel="stylesheet" href="wp-content/themes/Bootstrap-3-blank-wordpress-theme-master/css/style.css">
+    <link rel="stylesheet" href="wp-content/themes/Bootstrap-3-blank-wordpress-theme-master/css/bootstrap.css">
+
+
 	</head>
 
   <body <?php body_class(isset($class) ? $class : ''); ?>>
 
-    <nav class="navbar navbar-default" role="navigation">
-      <!-- Brand and toggle get grouped for better mobile display -->
+    <!--<nav class="navbar navbar-default" role="navigation">
+
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse">
-       <?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav navbar-right', 'depth'=> 3, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu)); ?>
-      </div><!-- /.navbar-collapse -->
-    </nav>
 
-    <div id="main-container" class="container">
+      </div>
+    </nav>-->
+
+
 			<!--FIn de header-->
+      <div class="container-full">
+        <div class="button-menu">
+          <span class="glyphicon glyphicon-menu-hamburger" style="font-size:2em; color:white;"></span>
+        </div>
 
+        <div class="button-menu-apply text-decoration">
+          <a href="#">APPLY NOW</a>
+        </div>
 <div class="row">
 
-	<div class="col-md-8">
 
+
+
+        </div>
+	<div class="col-md-8">
+<div class="col-md-offset-2 box-simple">
+s
+</div>
+<?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav navbar-right', 'depth'=> 3, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu)); ?>
 		<?php if(have_posts()) : ?>
 		   <?php while(have_posts()) : the_post(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
