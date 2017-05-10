@@ -1,0 +1,28 @@
+<!-- start Simple Custom CSS and JS -->
+<style type="text/css">
+/* Add your CSS code here.
+                     
+For example:
+.example {
+    color: red;
+}
+
+For brushing up on your CSS knowledge, check out http://www.w3schools.com/css/css_syntax.asp
+
+End of comment */ 
+#video_box {
+    position: relative;
+    width: 100%;
+    vertical-align: middle;
+}
+#video_overlays {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: 300000;
+}
+.video_responsive {
+  max-width: 100%;
+  height: auto;
+}</style>
+<!-- end Simple Custom CSS and JS -->
