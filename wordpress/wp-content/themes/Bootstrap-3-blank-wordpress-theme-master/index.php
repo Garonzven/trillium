@@ -7,14 +7,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <link rel="stylesheet" href="wp-content/themes/Bootstrap-3-blank-wordpress-theme-master/css/style.css">
-    <link rel="stylesheet" href="wp-content/themes/Bootstrap-3-blank-wordpress-theme-master/css/bootstrap.css">
+    <?php wp_head(); ?>
 
 
 	</head>
 
   <body <?php body_class(isset($class) ? $class : ''); ?>>
 
-    <!--<nav class="navbar navbar-default" role="navigation">
+    <!-- <nav class="navbar navbar-default" role="navigation">
 
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,11 +27,11 @@
       <div class="collapse navbar-collapse">
 
       </div>
-    </nav>-->
+    </nav> -->
 
 
 			<!--FIn de header-->
-      <div class="container-full">
+      <!-- <div class="container-full">
         <div class="button-menu">
           <span class="glyphicon glyphicon-menu-hamburger" style="font-size:2em; color:white;" onclick="displayMenu()"></span>
         </div>
@@ -48,15 +48,10 @@
           </ul>
         </div>
 <div class="row">
-
-
-
-
-        </div>
+</div>
 	<div class="col-md-8">
 <div class="col-md-offset-2 box-simple">
-s
-</div>
+</div> -->
 <?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav navbar-right', 'depth'=> 3, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu)); ?>
 		<?php if(have_posts()) : ?>
 		   <?php while(have_posts()) : the_post(); ?>
@@ -131,7 +126,7 @@ s
 </script>
 
 <script type="text/javascript">
-  
+
 </script>
 
 <?php get_footer(); ?>
