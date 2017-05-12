@@ -1,0 +1,23 @@
+<!-- start Simple Custom CSS and JS -->
+<style type="text/css">
+/* Add your CSS code here.
+                     
+For example:
+.example {
+    color: red;
+}
+
+For brushing up on your CSS knowledge, check out http://www.w3schools.com/css/css_syntax.asp
+
+End of comment */ 
+
+#image-section2 { 
+  	margin-top: -60px;
+    z-index: 1;
+  	position: absolute;
+}
+#testimonio{
+background-color: grey;
+}
+</style>
+<!-- end Simple Custom CSS and JS -->
