@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <link rel="stylesheet" href="wp-content/themes/Bootstrap-3-blank-wordpress-theme-master/css/style.css">
+    <!--<link rel="stylesheet" href="wp-content/themes/Bootstrap-3-blank-wordpress-theme-master/css/style.css">-->
     <?php wp_head(); ?>
 
 
@@ -52,7 +52,7 @@
 	<div class="col-md-8">
 <div class="col-md-offset-2 box-simple">
 </div> -->
-<?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav navbar-right', 'depth'=> 3, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu)); ?>
+<!--<?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'nav navbar-nav navbar-right', 'depth'=> 3, 'container'=> false, 'walker'=> new Bootstrap_Walker_Nav_Menu)); ?> -->
 		<?php if(have_posts()) : ?>
 		   <?php while(have_posts()) : the_post(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

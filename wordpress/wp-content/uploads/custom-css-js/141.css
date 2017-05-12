@@ -11,13 +11,74 @@ For brushing up on your CSS knowledge, check out http://www.w3schools.com/css/cs
 
 End of comment */ 
 
-#image-section2 { 
-  	margin-top: -60px;
-    z-index: 1;
-  	position: absolute;
+#image-section2{
+position: absolute;
+z-index: 1;
+margin-top: -60px;
 }
 #testimonio{
 background-color: grey;
 }
-</style>
+.container{
+padding: 0px;
+  width: 100%;
+}
+
+.background_numbers{
+ /*background-image: url("../wp-content/uploads/2017/05/emp.jpg");*/
+  background-color: red;
+}
+
+#imageNumber {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.text {
+  z-index: 100;
+
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  left: 150px;
+  top: 350px;
+}
+
+#content {
+  height: 400px;
+  position: relative;
+}
+
+#containerVideo {
+   height: 568px; 
+}
+
+#containerVideo h1 {
+  color: white;
+  top: 40%;
+  left: 10%;
+  position: absolute;
+}
+#containerVideo h2 {
+  color: white;
+  top: 55%;
+  left: 10%;
+  position: absolute;
+}
+#containerVideo img {
+  top: 25%;
+  left: 10%;
+  position: absolute;
+}
+
+#containerVideo .clearfix {
+ position: absolute;
+    top: 65%;
+  left: 10%;
+}
+
+#containerVideo .btn-warning {
+ position: absolute;
+   margin-left: 5px;
+}</style>
 <!-- end Simple Custom CSS and JS -->
