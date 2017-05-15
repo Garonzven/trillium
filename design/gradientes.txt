@@ -1,0 +1,15 @@
+gradiente rosa - amarillo
+
+rosado trillium: ff5b5f
+amarillo trillium: ffca00
+
+Gradiente verde-amarillo
+
+verde trillium: 0ef374
+amarillo trillum:eaba02
+
+
+Gradiente fucsia- violeta
+
+fucsia trillium: fc585f
+morado trillium: 333365
