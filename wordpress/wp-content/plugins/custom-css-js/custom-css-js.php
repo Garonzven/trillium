@@ -3,10 +3,13 @@
  * Plugin Name: Simple Custom CSS and JS 
  * Plugin URI: https://wordpress.org/plugins/custom-css-js/
  * Description: Easily add Custom CSS or JS to your website with an awesome editor.
- * Version: 3.0 
+ * Version: 3.1 
  * Author: Diana Burduja
  * Author URI: https://www.silkypress.com/
  * License: GPL2
+ *
+ * Text Domain: custom-css-js 
+ * Domain Path: /languages/
  *
  */
 
@@ -15,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'CustomCSSandJS' ) ) :
-    define( 'CCJ_VERSION', '3.0' );
+    define( 'CCJ_VERSION', '3.1' );
 /**
  * Main CustomCSSandJS Class
  *
@@ -50,14 +53,14 @@ final class CustomCSSandJS {
       * Cloning is forbidden.
       */
     public function __clone() {
-         _doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0' );
+         _doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'custom-css-js' ), '1.0' );
     }
 
     /**
      * Unserializing instances of this class is forbidden.
      */
     public function __wakeup() {
-        _doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0' );
+        _doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'custom-css-js' ), '1.0' );
     }
 
     /**
@@ -72,6 +75,7 @@ final class CustomCSSandJS {
         $this->upload_dir = $wp_upload_dir['basedir'] . '/custom-css-js';
         $this->upload_url = $wp_upload_dir['baseurl'] . '/custom-css-js';
          if ( is_admin() ) {
+            $this->load_plugin_textdomain();
             add_action('admin_init', array($this, 'create_roles'));
             include_once( 'includes/admin-screens.php' );
             include_once( 'includes/admin-addons.php' );
@@ -191,20 +195,20 @@ final class CustomCSSandJS {
      */
     public function register_post_type() {
         $labels = array(
-            'name'                   => _x( 'Custom Code', 'post type general name'),
-            'singular_name'          => _x( 'Custom Code', 'post type singular name'),
-            'menu_name'              => _x( 'Custom CSS & JS', 'admin menu'),
-            'name_admin_bar'         => _x( 'Custom Code', 'add new on admin bar'),
-            'add_new'                => _x( 'Add Custom Code', 'add new'),
-            'add_new_item'           => __( 'Add Custom Code'),
-            'new_item'               => __( 'New Custom Code'),
-            'edit_item'              => __( 'Edit Custom Code'),
-            'view_item'              => __( 'View Custom Code'),
-            'all_items'              => __( 'All Custom Code'),
-            'search_items'           => __( 'Search Custom Code'),
-            'parent_item_colon'      => __( 'Parent Custom Code:'),
-            'not_found'              => __( 'No Custom Code found.'),
-            'not_found_in_trash'     => __( 'No Custom Code found in Trash.')
+            'name'                   => _x( 'Custom Code', 'post type general name', 'custom-css-js'),
+            'singular_name'          => _x( 'Custom Code', 'post type singular name', 'custom-css-js'),
+            'menu_name'              => _x( 'Custom CSS & JS', 'admin menu', 'custom-css-js'),
+            'name_admin_bar'         => _x( 'Custom Code', 'add new on admin bar', 'custom-css-js'),
+            'add_new'                => _x( 'Add Custom Code', 'add new', 'custom-css-js'),
+            'add_new_item'           => __( 'Add Custom Code', 'custom-css-js'),
+            'new_item'               => __( 'New Custom Code', 'custom-css-js'),
+            'edit_item'              => __( 'Edit Custom Code', 'custom-css-js'),
+            'view_item'              => __( 'View Custom Code', 'custom-css-js'),
+            'all_items'              => __( 'All Custom Code', 'custom-css-js'),
+            'search_items'           => __( 'Search Custom Code', 'custom-css-js'),
+            'parent_item_colon'      => __( 'Parent Custom Code:', 'custom-css-js'),
+            'not_found'              => __( 'No Custom Code found.', 'custom-css-js'),
+            'not_found_in_trash'     => __( 'No Custom Code found in Trash.', 'custom-css-js')
         );
 
         $capability_type = 'custom_css';
@@ -225,7 +229,7 @@ final class CustomCSSandJS {
 
         $args = array(
             'labels'                 => $labels,
-            'description'            => __( 'Custom CSS and JS code' ),
+            'description'            => __( 'Custom CSS and JS code', 'custom-css-js' ),
             'public'                 => false,
             'publicly_queryable'     => false,
             'show_ui'                => true,
@@ -270,7 +274,7 @@ final class CustomCSSandJS {
             return;
 
         // Add Web Designer role
-        add_role( 'css_js_designer', __( 'Web Designer'), array(
+        add_role( 'css_js_designer', __( 'Web Designer', 'custom-css-js'), array(
             'level_9'                => true,
             'level_8'                => true,
             'level_7'                => true,
@@ -339,6 +343,10 @@ final class CustomCSSandJS {
     }
 
 
+	public function load_plugin_textdomain() {
+		load_plugin_textdomain( 'custom-css-js', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+	}
+
 }
 
 endif; 
@@ -361,7 +369,7 @@ CustomCSSandJS();
 function custom_css_js_plugin_action_links( $links ) {
 
     $settings_link = '<a href="edit.php?post_type=custom-css-js">' .
-        esc_html( __('Settings' ) ) . '</a>';
+        esc_html( __('Settings', 'custom-css-js' ) ) . '</a>';
 
     return array_merge( array( $settings_link), $links );
     

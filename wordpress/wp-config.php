@@ -23,10 +23,10 @@
 define('DB_NAME', 'trillium');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'phpmyadmin');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'Garonz2017');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
