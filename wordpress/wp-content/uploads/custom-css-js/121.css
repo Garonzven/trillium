@@ -1,0 +1,79 @@
+<!-- start Simple Custom CSS and JS -->
+<style type="text/css">
+.content{
+  padding-top:50px
+}
+.society .header-society{
+  background-image:url(../wp-content/uploads/2017/05/team.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+  height:auto;width:100%;
+  overflow:hidden
+}
+.row{
+  margin:0
+}
+.society img{
+  width:100%;
+  padding-top:20vh
+}
+.content .menu-society{
+  border-right:2px solid #ddd;
+  width:100%
+}
+.content .col-md-4{
+  padding:0
+}
+.content .staff-society h1{
+  margin-top:0;
+  padding:0 0 10px 10px;
+  font-weight:700
+}
+.content .staff-society p{
+  padding:0 0 10px 10px
+}
+footer{
+  margin-top:10px
+}
+footer .footer-green{
+  background:#ff5b5f;
+  background:linear-gradient(-90deg,#eaba02,#0ef374)
+}
+footer .footer-green img{
+  margin-top: 3em;
+  width:100%;
+  margin-left:-20px
+}
+footer i{
+  background-color:#fff;
+  border-radius:50%;
+  border:1x solid grey;
+  padding:10px
+}
+footer .prueba{
+  padding-top:25px;
+  padding-bottom:30px
+}
+footer .icons{
+  padding-right:20px;
+  display:inline-block
+}
+@media screen and (max-width:400px){
+  footer i{
+    background-color:#fff;
+    border-radius:50%;
+    border:1x solid grey;
+    padding:10px
+    }
+  footer .prueba{
+    padding-top:40px;
+    padding-bottom:30px
+  }
+    footer .icons{
+      padding-right:20px;
+      display:inline-block;
+      padding-top:20px
+    }
+    }
+</style>
+<!-- end Simple Custom CSS and JS -->
