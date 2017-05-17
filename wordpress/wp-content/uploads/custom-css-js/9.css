@@ -188,27 +188,48 @@ padding: 0px;
       padding-bottom: 10rem;
 }
 
-footer {
- margin-top: 10px; 
-}
 
-.grad {
-background:#ff5b5f;
+footer{
+  margin-top:10px
+}
+footer .footer-red{
+  background:#ff5b5f;
   background:linear-gradient(-90deg,#ff5b5f,#ffca00)
 }
-
-.grad img {
-  margin-top:3rem;width:100%
+footer .footer-red img{
+  margin-top: 3em;
+  width:100%;
+  margin-left:-20px
 }
-
-footer i
-{
- background-color: white;
- border-radius: 50%;
- border: 1x solid grey;
- padding:10px;
+footer i{
+  background-color:#fff;
+  border-radius:50%;
+  border:1x solid grey;
+  padding:10px
 }
-
-
-</style>
+footer .prueba{
+  padding-top:25px;
+  padding-bottom:30px
+}
+footer .icons{
+  padding-right:20px;
+  display:inline-block
+}
+@media screen and (max-width:400px){
+  footer i{
+    background-color:#fff;
+    border-radius:50%;
+    border:1x solid grey;
+    padding:10px
+    }
+  footer .prueba{
+    padding-top:40px;
+    padding-bottom:30px
+  }
+    footer .icons{
+      padding-right:20px;
+      display:inline-block;
+      padding-top:20px
+    }
+    }</style>
 <!-- end Simple Custom CSS and JS -->
