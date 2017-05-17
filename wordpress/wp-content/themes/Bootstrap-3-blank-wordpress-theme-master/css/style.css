@@ -71,10 +71,11 @@
   position: absolute;
   right: 0px;
   background-color: black;
-  width: 200px;
-  margin: 85px 0px 0px 0px;
-  opacity: 0.3;
+  width: 286px;
+  margin: 86px 0px 0px 0px;
+  opacity: 0.6;
   padding: 5px 0px 10px 0px;
+  list-style-type: none;
 }
 
 #menu .triangulo {
@@ -85,9 +86,71 @@
   background-color: black;
   right: 30px;
   top: -2px;
+  z-index: -1;
 }
+#menu ul li {
+  list-style-type: none;
+}
+
 #menu ul li a {
   color: white;
   list-style-type: none;
+  text-decoration: none;
+  margin: 1px;
+
+}
+#menu ul li a:hover {
+  color: yellow;
+}
+
+#menu ul li -webkit-appearance: none;
+-moz-appearance: none;
+appearance: none; select {
+  color: yellow;
+}
+/*#menu .open>.dropdown-menu {
+    display: block;
+}
+
+#menu .dropdown-menu {
+    position: absolute;
+
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}*/
+
+ul li a .raya {
+  height: 2px;
+
+}
+
+.menu-item {
+
+  border-bottom: 1px solid;
+}
+
+.menu-item-has-children {
+
+border-top-style: none;
+border-right-style: none;
+
+border-left-style: none;
+
+}
+
+
+
+.menu-item-has-children li {
+border-bottom: none;
 
 }

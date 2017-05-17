@@ -1,0 +1,37 @@
+<!-- start Simple Custom CSS and JS -->
+<style type="text/css">
+.menu_sidebar{
+padding: 12px;
+padding-right: 40px;
+border-right: 1px solid black;
+}
+
+.highlight{
+ color: #e82566; 
+}
+
+.colorFound{
+ color: #e82566;
+  padding-bottom: 15px;
+}
+.padding-img{
+padding: 100px;
+}
+.side-nav li{
+	list-style-position: inside;
+    list-style-type: none;
+    border-bottom: 1px solid black;
+}
+.side-nav li ul li p span{
+  color: #e82566;
+  font-size: 250%;
+  padding
+}
+
+.side-nav li ul li:hover{
+  color: #e82566;
+	transform:translateX(-25px);
+    cursor:pointer;
+}
+</style>
+<!-- end Simple Custom CSS and JS -->
