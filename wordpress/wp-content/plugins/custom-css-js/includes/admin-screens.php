@@ -91,13 +91,13 @@ class CustomCSSandJS_Admin {
 
         remove_submenu_page( $menu_slug, $submenu_slug);
 
-        $title = __('Add Custom CSS');
+        $title = __('Add Custom CSS', 'custom-css-js');
         add_submenu_page( $menu_slug, $title, $title, 'publish_custom_csss', $submenu_slug .'&language=css');
 
-        $title = __('Add Custom JS');
+        $title = __('Add Custom JS', 'custom-css-js');
         add_submenu_page( $menu_slug, $title, $title, 'publish_custom_csss', $submenu_slug . '&language=js');
 
-        $title = __('Add Custom HTML');
+        $title = __('Add Custom HTML', 'custom-css-js');
         add_submenu_page( $menu_slug, $title, $title, 'publish_custom_csss', $submenu_slug . '&language=html');
 
     }
@@ -186,7 +186,7 @@ class CustomCSSandJS_Admin {
     }
 
     public function add_meta_boxes() {
-        add_meta_box('custom-code-options', __('Options'), array( $this, 'custom_code_options_meta_box_callback'), 'custom-css-js', 'side', 'low');
+        add_meta_box('custom-code-options', __('Options', 'custom-css-js'), array( $this, 'custom_code_options_meta_box_callback'), 'custom-css-js', 'side', 'low');
         
         remove_meta_box( 'slugdiv', 'custom-css-js', 'normal' );
     }
@@ -246,9 +246,9 @@ class CustomCSSandJS_Admin {
         }
 ?>
     <div class="updated buttons">
-        <a href="post-new.php?post_type=custom-css-js&language=css" class="custom-btn custom-css-btn">Add CSS code</a>
-        <a href="post-new.php?post_type=custom-css-js&language=js" class="custom-btn custom-js-btn">Add JS code</a>
-        <a href="post-new.php?post_type=custom-css-js&language=html" class="custom-btn custom-js-btn">Add HTML code</a>
+    <a href="post-new.php?post_type=custom-css-js&language=css" class="custom-btn custom-css-btn"><?php _e('Add CSS code', 'custom-css-js'); ?></a>
+    <a href="post-new.php?post_type=custom-css-js&language=js" class="custom-btn custom-js-btn"><?php _e('Add JS code', 'custom-css-js'); ?></a>
+    <a href="post-new.php?post_type=custom-css-js&language=html" class="custom-btn custom-js-btn"><?php _e('Add HTML code', 'custom-css-js'); ?></a>
         <!-- a href="post-new.php?post_type=custom-css-js&language=php" class="custom-btn custom-php-btn">Add PHP code</a -->
     </div>
 <?php
@@ -261,13 +261,13 @@ class CustomCSSandJS_Admin {
      */
     function manage_custom_posts_columns( $columns ) {
         return array(
-            'cb'    => '<input type="checkbox" />',
-            'active' => '<span class="ccj-dashicons dashicons dashicons-star-empty" title="Active"></span>',
-            'type'  => 'Type',
-            'title' => 'Title',
-            'author'  => 'Author',
-            'date'  => 'Date',
-            'modified'  => 'Modified',
+            'cb'        => '<input type="checkbox" />',
+            'active'    => '<span class="ccj-dashicons dashicons dashicons-star-empty" title="'.__('Active', 'custom-css-js') .'"></span>',
+            'type'      => __('Type', 'custom-css-js'),
+            'title'     => __('Title', 'custom-css-js'),
+            'author'    => __('Author', 'custom-css-js'),
+            'date'      => __('Date', 'custom-css-js'),
+            'modified'  => __('Modified', 'custom-css-js'),
         );
     }
 
@@ -306,11 +306,13 @@ class CustomCSSandJS_Admin {
 
         if ( $column == 'active' ) {
             $url = wp_nonce_url( admin_url( 'admin-ajax.php?action=ccj_active_code&code_id=' . $post_id ), 'ccj-active-code' );
-            echo '<a href="' . esc_url( $url ) . '" title="'. __( 'Toggle active' ) . '">';
+            echo '<a href="' . esc_url( $url ) . '" title="'. __( 'Toggle active', 'custom-css-js' ) . '">';
             if ( $this->is_active( $post_id ) ) {
-                echo '<span class="dashicons dashicons-star-filled" title="The code is active. Click to inactivate it"></span>';
+                $active_title = __('The code is active. Click to deactivate it', 'custom-css-js');
+                echo '<span class="dashicons dashicons-star-filled" title="'.$active_title.'"></span>';
             } else {
-                echo '<span class="dashicons dashicons-star-empty ccj_row" title="The code is inactive. Click to activate it"></span>';
+                $active_title = __('The code is inactive. Click to activate it', 'custom-css-js');
+                echo '<span class="dashicons dashicons-star-empty ccj_row" title="'.$active_title.'"></span>';
             }
             echo '</a>';
 
@@ -360,10 +362,10 @@ class CustomCSSandJS_Admin {
         <script type="text/javascript">
              /* <![CDATA[ */
             jQuery(window).ready(function($){
-                var h1 = 'Custom Code ';
-                h1 += '<a href="post-new.php?post_type=custom-css-js&language=css" class="page-title-action">Add CSS Code</a>';
-                h1 += '<a href="post-new.php?post_type=custom-css-js&language=js" class="page-title-action">Add JS Code</a>';
-                h1 += '<a href="post-new.php?post_type=custom-css-js&language=html" class="page-title-action">Add HTML Code</a>';
+                var h1 = '<?php _e('Custom Code', 'custom-css-js'); ?> ';
+                h1 += '<a href="post-new.php?post_type=custom-css-js&language=css" class="page-title-action"><?php _e('Add CSS Code', 'custom-css-js'); ?></a>';
+                h1 += '<a href="post-new.php?post_type=custom-css-js&language=js" class="page-title-action"><?php _e('Add JS Code', 'custom-css-js'); ?></a>';
+                h1 += '<a href="post-new.php?post_type=custom-css-js&language=html" class="page-title-action"><?php _e('Add HTML Code', 'custom-css-js'); ?></a>';
                 $("#wpbody-content h1").html(h1); 
             });
 
@@ -392,9 +394,9 @@ class CustomCSSandJS_Admin {
         $title = $action . ' ' . strtoupper( $language ) . ' code';
 
         if ( $action == 'Edit' ) {
-            $title .= ' <a href="post-new.php?post_type=custom-css-js&language=css" class="page-title-action">Add CSS Code</a> ';
-            $title .= '<a href="post-new.php?post_type=custom-css-js&language=js" class="page-title-action">Add JS Code</a>';
-            $title .= '<a href="post-new.php?post_type=custom-css-js&language=html" class="page-title-action">Add HTML Code</a>';
+            $title .= ' <a href="post-new.php?post_type=custom-css-js&language=css" class="page-title-action">'.__('Add CSS Code', 'custom-css-js') .'</a> ';
+            $title .= '<a href="post-new.php?post_type=custom-css-js&language=js" class="page-title-action">'.__('Add JS Code', 'custom-css-js') .'</a>';
+            $title .= '<a href="post-new.php?post_type=custom-css-js&language=html" class="page-title-action">'.__('Add HTML Code', 'custom-css-js') .'</a>';
         }
 
         ?>
@@ -402,7 +404,7 @@ class CustomCSSandJS_Admin {
              /* <![CDATA[ */
             jQuery(window).ready(function($){
                 $("#wpbody-content h1").html('<?php echo $title; ?>');
-                $("#message.updated.notice").html('<p>Code updated</p>');
+                $("#message.updated.notice").html('<p><?php _e('Code updated', 'custom-css-js'); ?></p>');
 
                 var from_top = -$("#normal-sortables").height(); 
                 if ( from_top != 0 ) {
@@ -433,6 +435,7 @@ class CustomCSSandJS_Admin {
     function remove_unallowed_metaboxes() {
         global $wp_meta_boxes;
 
+        // Side boxes
         $allowed = array( 'submitdiv', 'custom-code-options' );
 
         $allowed = apply_filters( 'custom-css-js-meta-boxes', $allowed );
@@ -441,6 +444,19 @@ class CustomCSSandJS_Admin {
             foreach( $_boxes as $_key => $_value ) { 
             if ( ! in_array( $_key, $allowed ) ) {
                 unset( $wp_meta_boxes['custom-css-js']['side'][$_priority][$_key] );
+            }
+            }
+        }
+
+        // Normal boxes
+        $allowed = array( 'slugdiv', 'previewdiv', 'url-rules', 'revisionsdiv' );
+
+        $allowed = apply_filters( 'custom-css-js-meta-boxes-normal', $allowed );
+
+        foreach( $wp_meta_boxes['custom-css-js']['normal'] as $_priority => $_boxes ) {
+            foreach( $_boxes as $_key => $_value ) { 
+            if ( ! in_array( $_key, $allowed ) ) {
+                unset( $wp_meta_boxes['custom-css-js']['normal'][$_priority][$_key] );
             }
             }
         }
@@ -471,7 +487,7 @@ class CustomCSSandJS_Admin {
         switch ( $language ) {
             case 'js' :
                 if ( $new_post ) {
-                    $post->post_content = '/* Add your JavaScript code here.
+                    $post->post_content = __('/* Add your JavaScript code here.
                      
 If you are using the jQuery library, then don\'t forget to wrap your code inside jQuery.ready() as follows:
 
@@ -479,7 +495,7 @@ jQuery(document).ready(function( $ ){
     // Your code in here 
 });
 
-End of comment */ ' . PHP_EOL . PHP_EOL;
+End of comment */ ', 'custom-css-js') . PHP_EOL . PHP_EOL;
                 }
                 $code_mirror_mode = 'text/javascript';
                 $code_mirror_before = '<script type="text/javascript">';
@@ -487,7 +503,7 @@ End of comment */ ' . PHP_EOL . PHP_EOL;
                 break;
             case 'html' :
                 if ( $new_post ) {
-                    $post->post_content = '<!-- Add HTML code to the header or the footer. 
+                    $post->post_content = __('<!-- Add HTML code to the header or the footer. 
 
 For example, you can use the following code for loading the jQuery library from Google CDN:
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -495,7 +511,7 @@ For example, you can use the following code for loading the jQuery library from 
 or the following one for loading the Bootstrap library from MaxCDN:
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
--- End of the comment --> ' . PHP_EOL . PHP_EOL;
+-- End of the comment --> ', 'custom-css-js') . PHP_EOL . PHP_EOL;
                 }
                 $code_mirror_mode = 'html';
                 $code_mirror_before = '';
@@ -513,7 +529,7 @@ or the following one for loading the Bootstrap library from MaxCDN:
                 break;
             default :
                 if ( $new_post ) {
-                    $post->post_content = '/* Add your CSS code here.
+                    $post->post_content = __('/* Add your CSS code here.
                      
 For example:
 .example {
@@ -522,7 +538,7 @@ For example:
 
 For brushing up on your CSS knowledge, check out http://www.w3schools.com/css/css_syntax.asp
 
-End of comment */ ' . PHP_EOL . PHP_EOL;
+End of comment */ ', 'custom-css-js') . PHP_EOL . PHP_EOL;
 
                 }
                 $code_mirror_mode = 'text/css';
@@ -612,7 +628,7 @@ End of comment */ ' . PHP_EOL . PHP_EOL;
 
             <div class="ccj_only_premium ccj_only_premium-right">
                 <div> 
-                    <a href="https://www.silkypress.com/simple-custom-css-js-pro/?utm_source=wordpress&utm_campaign=ccj_free&utm_medium=banner" target="_blank">Available only in <br />Simple Custom CSS and JS Pro</a>
+                <a href="https://www.silkypress.com/simple-custom-css-js-pro/?utm_source=wordpress&utm_campaign=ccj_free&utm_medium=banner" target="_blank"><?php _e('Available only in <br />Simple Custom CSS and JS Pro', 'custom-css-js'); ?></a>
                 </div>
             </div>
 
@@ -627,81 +643,81 @@ End of comment */ ' . PHP_EOL . PHP_EOL;
     function get_options_meta() {
         $options = array(
             'linking' => array(
-                'title' => 'Linking type',
+                'title' => __('Linking type', 'custom-css-js'),
                 'type' => 'radio',
                 'default' => 'internal',
                 'values' => array(
                     'external' => array(
-                        'title' => 'External File',
+                        'title' => __('External File', 'custom-css-js'),
                         'dashicon' => 'media-code',
                     ),
                     'internal' => array(
-                        'title' => 'Internal',
+                        'title' => __('Internal', 'custom-css-js'),
                         'dashicon' => 'editor-alignleft',
                     ),
                 ),
             ),
             'type' => array(
-                'title' => 'Where on page',
+                'title' => __('Where on page', 'custom-css-js'),
                 'type' => 'radio',
                 'default' => 'header',
                 'values' => array(
                     'header' => array(
-                        'title' => 'Header',
+                        'title' => __('Header', 'custom-css-js'),
                         'dashicon' => 'arrow-up-alt2',
                     ),
                     'footer' => array(
-                        'title' => 'Footer',
+                        'title' => __('Footer', 'custom-css-js'),
                         'dashicon' => 'arrow-down-alt2',
                     ),
                 ),
             ),
             'side' => array(
-                'title' => 'Where in site',
+                'title' => __('Where in site', 'custom-css-js'),
                 'type' => 'radio',
                 'default' => 'frontend',
                 'values' => array(
                     'frontend' => array(
-                        'title' => 'In Frontend',
+                        'title' => __('In Frontend', 'custom-css-js'),
                         'dashicon' => 'tagcloud',
                     ),
                     'admin' => array(
-                        'title' => 'In Admin',
+                        'title' => __('In Admin', 'custom-css-js'),
                         'dashicon' => 'id',
                     ),
                 ),
             ),
             'preprocessor' => array(
-                'title' => 'CSS Preprocessor',
+                'title' => __('CSS Preprocessor', 'custom-css-js'),
                 'type' => 'radio',
                 'default' => 'none',
                 'values' => array(
                     'none' => array(
-                        'title' => 'None',
+                        'title' => __('None', 'custom-css-js'),
                     ),
                     'less' => array(
-                        'title' => 'Less',
+                        'title' => __('Less', 'custom-css-js'),
                     ),
                     'sass' => array(
-                        'title' => 'SASS (only SCSS syntax)',
+                        'title' => __('SASS (only SCSS syntax)', 'custom-css-js'),
                     ),
                 ),
                 'disabled' => true,
             ),
             'minify' => array(
-                'title' => 'Minify the code',
+                'title' => __('Minify the code', 'custom-css-js'),
                 'type' => 'checkbox',
                 'default' => false,
                 'dashicon' => 'editor-contract',
                 'disabled' => true,
             ),
             'priority' => array(
-                'title' => 'Priority',
+                'title' => __('Priority', 'custom-css-js'),
                 'type' => 'select',
                 'default' => 5,
                 'dashicon' => 'sort',
                 'values' => array(
-                    1 => '1 (highest)',
+                    1 => _x('1 (highest)', '1 is the highest priority', 'custom-css-js'),
                     2 => '2',
                     3 => '3',
                     4 => '4',
@@ -710,7 +726,7 @@ End of comment */ ' . PHP_EOL . PHP_EOL;
                     7 => '7',
                     8 => '8',
                     9 => '9',
-                    10 => '10 (lowest)',
+                    10 => _x('10 (lowest)', '10 is the lowest priority', 'custom-css-js'),
                 ),
                 'disabled' => true,
             ),
@@ -726,63 +742,63 @@ End of comment */ ' . PHP_EOL . PHP_EOL;
     function get_options_meta_html() {
         $options = array(
             'type' => array(
-                'title' => 'Where on page',
+                'title' => __('Where on page', 'custom-css-js'),
                 'type' => 'radio',
                 'default' => 'header',
                 'values' => array(
                     'header' => array(
-                        'title' => 'Header',
+                        'title' => __('Header', 'custom-css-js'),
                         'dashicon' => 'arrow-up-alt2',
                     ),
                     'footer' => array(
-                        'title' => 'Footer',
+                        'title' => __('Footer', 'custom-css-js'),
                         'dashicon' => 'arrow-down-alt2',
                     ),
                 ),
             ),
             'side' => array(
-                'title' => 'Where in site',
+                'title' => __('Where in site', 'custom-css-js'),
                 'type' => 'radio',
                 'default' => 'frontend',
                 'values' => array(
                     'frontend' => array(
-                        'title' => 'In Frontend',
+                        'title' => __('In Frontend', 'custom-css-js'),
                         'dashicon' => 'tagcloud',
                     ),
                     'admin' => array(
-                        'title' => 'In Admin',
+                        'title' => __('In Admin', 'custom-css-js'),
                         'dashicon' => 'id',
                     ),
                 ),
             ),
             'linking' => array(
-                'title' => 'On which device',
+                'title' => __('On which device', 'custom-css-js'),
                 'type' => 'radio',
                 'default' => 'both',
                 'dashicon' => '',
                 'values' => array(
                     'desktop' => array(
-                        'title' => 'Desktop',
+                        'title' => __('Desktop', 'custom-css-js'),
                         'dashicon' => 'desktop',
                     ),
                     'mobile' => array(
-                        'title' => 'Mobile',
+                        'title' => __('Mobile', 'custom-css-js'),
                         'dashicon' => 'smartphone',
                     ),
                     'both' => array(
-                        'title' => 'Both',
+                        'title' => __('Both', 'custom-css-js'),
                         'dashicon' => 'tablet',
                     ),
                 ),
                 'disabled' => true,
             ),
             'priority' => array(
-                'title' => 'Priority',
+                'title' => __('Priority', 'custom-css-js'),
                 'type' => 'select',
                 'default' => 5,
                 'dashicon' => 'sort',
                 'values' => array(
-                    1 => '1 (highest)',
+                    1 => _x('1 (highest)', '1 is the highest priority', 'custom-css-js'),
                     2 => '2',
                     3 => '3',
                     4 => '4',
@@ -791,7 +807,7 @@ End of comment */ ' . PHP_EOL . PHP_EOL;
                     7 => '7',
                     8 => '8',
                     9 => '9',
-                    10 => '10 (lowest)',
+                    10 => _x('10 (lowest)', '10 is the lowest priority', 'custom-css-js'),
                 ),
                 'disabled' => true,
             ),
@@ -913,8 +929,8 @@ End of comment */ ' . PHP_EOL . PHP_EOL;
         // Show a message if it couldn't create the dir
         if ( ! file_exists( $dir ) ) : ?>
              <div class="notice notice-error is-dismissible">
-             <p>The <b>custom-css-js</b> directory could not be created</p> 
-             <p>Please run the following commands in order to make the directory: <br /><strong>mkdir <?php echo $dir; ?>; </strong><br /><strong>chmod 777 <?php echo $dir; ?>;</strong></p>
+             <p><?php printf(__('The %s directory could not be created', 'custom-css-js'), '<b>custom-css-js</b>'); ?></p> 
+             <p><?php _e('Please run the following commands in order to make the directory', 'custom-css-js'); ?>: <br /><strong>mkdir <?php echo $dir; ?>; </strong><br /><strong>chmod 777 <?php echo $dir; ?>;</strong></p>
             </div>
         <?php return; endif;
  
@@ -922,8 +938,8 @@ End of comment */ ' . PHP_EOL . PHP_EOL;
         // Show a message if the dir is not writable
         if ( ! wp_is_writable( $dir ) ) : ?>
              <div class="notice notice-error is-dismissible">
-             <p>The <b><?php echo $dir; ?></b> directory is not writable, therefore the CSS and JS files cannot be saved.</p> 
-             <p>Please run the following command to make the directory writable:<br /><strong>chmod 777 <?php echo $dir; ?> </strong></p>
+             <p><?php printf(__('The %s directory is not writable, therefore the CSS and JS files cannot be saved.', 'custom-css-js'), '<b>'.$dir.'</b>'); ?></p> 
+             <p><?php _e('Please run the following command to make the directory writable', 'custom-css-js'); ?>:<br /><strong>chmod 777 <?php echo $dir; ?> </strong></p>
             </div>
         <?php return; endif;
 

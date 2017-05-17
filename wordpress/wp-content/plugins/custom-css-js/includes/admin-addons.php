@@ -39,7 +39,7 @@ class CustomCSSandJS_Addons {
 ?>
     <div class="ccj_only_premium ccj_only_premium-first">
         <div> 
-            <a href="https://www.silkypress.com/simple-custom-css-js-pro/?utm_source=wordpress&utm_campaign=ccj_free&utm_medium=banner" target="_blank">Available only in <br />Simple Custom CSS and JS Pro</a>
+        <a href="https://www.silkypress.com/simple-custom-css-js-pro/?utm_source=wordpress&utm_campaign=ccj_free&utm_medium=banner" target="_blank"><?php _e('Available only in <br />Simple Custom CSS and JS Pro', 'custom-css-js'); ?></a>
         </div>
     </div>
     <?php
@@ -51,9 +51,9 @@ class CustomCSSandJS_Addons {
      */
     function add_meta_boxes() {
         
-        add_meta_box( 'previewdiv', __('Preview'), array( $this, 'previews_meta_box_callback' ), 'custom-css-js', 'normal' );
-        add_meta_box( 'url-rules', __('Apply only on these URLs'), array( $this, 'url_rules_meta_box_callback' ), 'custom-css-js', 'normal' );
-        add_meta_box( 'revisionsdiv', __('Code Revisions'), array( $this, 'revisions_meta_box_callback' ), 'custom-css-js', 'normal' );
+        add_meta_box( 'previewdiv', __('Preview', 'custom-css-js'), array( $this, 'previews_meta_box_callback' ), 'custom-css-js', 'normal' );
+        add_meta_box( 'url-rules', __('Apply only on these URLs', 'custom-css-js'), array( $this, 'url_rules_meta_box_callback' ), 'custom-css-js', 'normal' );
+        add_meta_box( 'revisionsdiv', __('Code Revisions', 'custom-css-js'), array( $this, 'revisions_meta_box_callback' ), 'custom-css-js', 'normal' );
     }
 
 
@@ -64,8 +64,8 @@ class CustomCSSandJS_Addons {
 ?>
 <div id="preview-action">
     <div>
-    <input type="text" name="preview_url" id="ccj-preview_url" placeholder="Full URL on which to preview the changes ..." disabled="disabled" />
-    <a class="preview button button-primary button-large" id="ccj-preview">Preview Changes</a>
+    <input type="text" name="preview_url" id="ccj-preview_url" placeholder="<?php _e('Full URL on which to preview the changes ...', 'custom-css-js'); ?>" disabled="disabled" />
+    <a class="preview button button-primary button-large" id="ccj-preview"><?php _e('Preview Changes', 'custom-css-js'); ?></a>
     </div>
 </div>
 <?php
@@ -79,14 +79,14 @@ class CustomCSSandJS_Addons {
     function url_rules_meta_box_callback( $post ) {
 
         $filters = array(
-            'all'           => __('All Website'),
-            'first-page'    => __('First page'),
-            'contains'      => __('Contains'),
-            'not-contains'  => __('Not contains'),
-            'equal-to'      => __('Is equal to'),
-            'not-equal-to'  => __('Not equal to'),
-            'begins-with'   => __('Starts with'),
-            'ends-by'       => __('Ends by'),
+            'all'           => __('All Website', 'custom-css-js'),
+            'first-page'    => __('First page', 'custom-css-js'),
+            'contains'      => __('Contains', 'custom-css-js'),
+            'not-contains'  => __('Not contains', 'custom-css-js'),
+            'equal-to'      => __('Is equal to', 'custom-css-js'),
+            'not-equal-to'  => __('Not equal to', 'custom-css-js'),
+            'begins-with'   => __('Starts with', 'custom-css-js'),
+            'ends-by'       => __('Ends by', 'custom-css-js'),
         );
         $filters_html = '';
         foreach( $filters as $_key => $_value ) {
@@ -97,10 +97,10 @@ class CustomCSSandJS_Addons {
 
 ?>
         <input type="hidden" name="scan_anchor_filters" id="wplnst-scan-anchor-filters" value='<?php echo $applied_filters; ?>' />
-    <table id="wplnst-elist-anchor-filters" class="wplnst-elist" cellspacing="0" cellpadding="0" border="0" data-editable="true" data-label="<?php _e('URL'); ?>"></table>
-        <?php _e('URL'); ?> <select id="wplnst-af-new-type"><?php echo $filters_html ?></select>&nbsp;
-        <input id="wplnst-af-new" type="text" class="regular-text" value="" placeholder="<?php _e('Text filter'); ?>" />&nbsp;
-        <input class="button button-primary" type="button" id="wplnst-af-new-add" value="<?php _e('Add'); ?>" /></td>
+    <table id="wplnst-elist-anchor-filters" class="wplnst-elist" cellspacing="0" cellpadding="0" border="0" data-editable="true" data-label="<?php _e('URL', 'custom-css-js'); ?>"></table>
+        <?php _e('URL', 'custom-css-js'); ?> <select id="wplnst-af-new-type"><?php echo $filters_html ?></select>&nbsp;
+        <input id="wplnst-af-new" type="text" class="regular-text" value="" placeholder="<?php _e('Text filter', 'custom-css-js'); ?>" />&nbsp;
+        <input class="button button-primary" type="button" id="wplnst-af-new-add" value="<?php _e('Add', 'custom-css-js'); ?>" /></td>
 
 <?php
     }
@@ -133,11 +133,11 @@ class CustomCSSandJS_Addons {
 ?>
     <table class="revisions">
         <thead><tr>
-            <th class="revisions-compare">Compare</th>
-            <th>Revision</th>
-            <th>Author</th>
-            <th><input type="checkbox" name="delete[]" value="all" id="ccj-delete-checkbox" /> Delete</th>
-            <th>Restore</th>
+        <th class="revisions-compare"><?php _e('Compare', 'custom-css-js'); ?></th>
+        <th><?php _e('Revision', 'custom-css-js'); ?></th>
+        <th><?php _e('Author', 'custom-css-js'); ?></th>
+        <th><input type="checkbox" name="delete[]" value="all" id="ccj-delete-checkbox" /> <?php _e('Delete', 'custom-css-js'); ?></th>
+        <th><?php _e('Restore', 'custom-css-js'); ?></th>
         </tr></thead>
         <tbody>
         <?php foreach( $revisions as $revision ) : ?>
@@ -160,17 +160,17 @@ class CustomCSSandJS_Addons {
             <input type="checkbox" name="delete[]" value="<?php echo $revision['ID']; ?>" <?php echo $delete_disabled . $delete_tooltip; ?>/>
             </td>
             <td class="revisions-restore">
-                <a href="<?php echo $restore_url; ?>"><?php _e('Restore'); ?></a>
+                <a href="<?php echo $restore_url; ?>"><?php _e('Restore', 'custom-css-js'); ?></a>
             </td>
         </tr>
         <?php endforeach; ?>
         <tr>
             <td>
-                <input type="button" class="button-secondary" value="<?php esc_attr_e('Compare'); ?>" id="revisions-compare-button" />
+                <input type="button" class="button-secondary" value="<?php esc_attr_e('Compare', 'custom-css-js'); ?>" id="revisions-compare-button" />
             </td>
             <td colspan="2"> &nbsp;</td>
             <td>
-                <input type="button" class="button-secondary" value="<?php esc_attr_e('Delete'); ?>" id="revisions-delete-button" />
+                <input type="button" class="button-secondary" value="<?php esc_attr_e('Delete', 'custom-css-js'); ?>" id="revisions-delete-button" />
             </td>
             <td> &nbsp; </td>
         </tr> 

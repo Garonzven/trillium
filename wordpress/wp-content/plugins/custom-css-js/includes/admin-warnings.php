@@ -52,7 +52,7 @@ class CustomCSSandJS_Warnings {
     function check_qtranslate_notice() {
         $id = 'ccj_dismiss_qtranslate';
         $class = 'notice notice-warning is-dismissible';
-        $message = __( 'Please remove the <b>custom-css-js</b> post type from the <b>qTranslate settings</b> in order to avoid some malfunctions in the Simple Custom CSS & JS plugin. Check out <a href="https://www.silkypress.com/wp-content/uploads/2016/08/ccj_qtranslate_compatibility.png" target="_blank">this screenshot</a> for more details on how to do that.' );
+        $message = sprintf(__( 'Please remove the <b>custom-css-js</b> post type from the <b>qTranslate settings</b> in order to avoid some malfunctions in the Simple Custom CSS & JS plugin. Check out <a href="%s" target="_blank">this screenshot</a> for more details on how to do that.', 'custom-css-js'), 'https://www.silkypress.com/wp-content/uploads/2016/08/ccj_qtranslate_compatibility.png' );
 
         printf( '<div class="%1$s" id="%2$s"><p>%3$s</p></div>', $class, $id, $message );
 

@@ -122,7 +122,7 @@ class CustomCSSandJS_Notices {
             $link = 'https://www.silkypress.com/simple-custom-css-js-pro/?a=' . $this->convert_numbers_letters( $this->activation_time ) . '&utm_source=wordpress&utm_campaign=ccj_free&utm_medium=banner';
         }
 
-        $lower_part = sprintf( '<div style="margin-top: 7px;"><a href="%s" target="_blank">%s</a> | <a href="#" class="dismiss_notice"  target="_parent">%s</a></div>', $link, 'Get your discount now', 'Dismiss this notice' ); 
+        $lower_part = sprintf( '<div style="margin-top: 7px;"><a href="%s" target="_blank">%s</a> | <a href="#" class="dismiss_notice"  target="_parent">%s</a></div>', $link, __('Get your discount now', 'custom-css-js'), __('Dismiss this notice', 'custom-css-js') ); 
 
         switch ( $notice ) {
             case '1_day' :
