@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 471.51 513.23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff5a60;
+      }
+
+      .cls-2 {
+        opacity: 0.81;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-4 {
+        font-size: 72px;
+        fill: #fff;
+        font-family: PFDinTextUniversal, PF Din Text Universal;
+        letter-spacing: -0.03em;
+      }
+
+      .cls-5 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-6 {
+        font-size: 85px;
+        letter-spacing: -0.01em;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="45.4" y1="376.87" x2="332.68" y2="89.6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#843366"/>
+      <stop offset="0.18" stop-color="#ad4064"/>
+      <stop offset="0.4" stop-color="#da4e62"/>
+      <stop offset="0.58" stop-color="#f55760"/>
+      <stop offset="0.68" stop-color="#ff5a60"/>
+      <stop offset="0.74" stop-color="#ff5e5c"/>
+      <stop offset="0.8" stop-color="#ff6950"/>
+      <stop offset="0.87" stop-color="#ff7c3c"/>
+      <stop offset="0.93" stop-color="#ff9620"/>
+      <stop offset="0.98" stop-color="#ffb400"/>
+    </linearGradient>
+  </defs>
+  <title>invited_title</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <path class="cls-1" d="M173.08,513.23c-20.09,0-40-6.35-59.45-11.41l-12.23-6.69c85.61,22.2,173.6-4.67,220.79-35C394.1,414,452.18,337.41,463.41,274,484.76,153.48,323.7,33.51,168.45.63L178.9,0c81,17.15,159.12,54.06,214.38,103.94,59.19,53.43,86.24,114.2,76.16,171.12-5.44,30.74-22.2,66.19-47.18,99.82a372.76,372.76,0,0,1-96.77,90.44c-32.27,20.73-65.92,34.95-100,42.26A256.48,256.48,0,0,1,173.08,513.23Z"/>
+        <g class="cls-2">
+          <path class="cls-3" d="M445.54,240.91c0,85.38-100.47,231.38-236.71,220.67-85.12-6.69-195.51-84-205.57-168.78C-7.44,202.49,7.43,44.2,58.79,24.25,187.79-25.85,445.54,147.54,445.54,240.91Z"/>
+        </g>
+      </g>
+      <text class="cls-4" transform="translate(59.47 238.78)">Y<tspan class="cls-5" x="34.42" y="0">OU ARE </tspan><tspan class="cls-6"><tspan x="0" y="72">INVITED</tspan></tspan></text>
+    </g>
+  </g>
+</svg>

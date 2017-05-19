@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 389.39 423.84">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff5a60;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        font-size: 72px;
+        fill: #fff;
+        font-family: PFDinTextUniversal, PF Din Text Universal;
+        letter-spacing: -0.01em;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="37.49" y1="311.23" x2="274.74" y2="73.99" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fc0"/>
+      <stop offset="1" stop-color="#ff5a60"/>
+    </linearGradient>
+  </defs>
+  <title>reach_title</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <path class="cls-1" d="M142.93,423.84c-16.59,0-33-5.25-49.09-9.42l-10.1-5.52C154.44,427.23,227.1,405,266.07,380c59.39-38.14,107.36-101.37,116.63-153.75C400.33,126.75,267.32,27.67,139.11.52L147.74,0c66.88,14.16,131.41,44.64,177,85.83C373.67,130,396,180.14,387.68,227.15c-4.5,25.38-18.33,54.66-39,82.43a307.84,307.84,0,0,1-79.91,74.69c-26.65,17.12-54.44,28.86-82.6,34.9A211.81,211.81,0,0,1,142.93,423.84Z"/>
+        <path class="cls-2" d="M367.95,199c0,70.51-83,191.08-195.48,182.24C102.17,375.66,11,311.82,2.7,241.8-6.15,167.22,6.13,36.5,48.55,20,155.08-21.35,367.95,121.85,367.95,199Z"/>
+        <text class="cls-3" transform="translate(20.84 222.88)">REACH US!</text>
+      </g>
+    </g>
+  </g>
+</svg>
